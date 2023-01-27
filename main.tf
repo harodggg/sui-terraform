@@ -28,7 +28,7 @@ resource "google_compute_instance" "sui_instance" {
   metadata     = {
     ssh-keys = "root:${var.sui_instance_pubkey}"
     startup-script = <<SCRIPT
-        
+
     SCRIPT
   }
 

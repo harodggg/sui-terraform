@@ -24,14 +24,3 @@ variable "sui_instance_pubkey" {
     EOF
 }
 
-data "template_file" "docker-script-build" {
-  template = "${file("templates/docker-script-build.tpl")}"
-}
-
-data "template_file" "docker-compose-build" {
-  template = "${file("templates/docker-compose-build.tpl")}"
-}
-
-data "template_file" "execute-shell" {
-  template = "${file("templates/execute-shell.tpl")}"
-}
