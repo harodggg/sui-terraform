@@ -1,4 +1,6 @@
-variable "project" { }
+variable "project" {
+    default = "quantum-gearbox-376023" // google cloud project id
+ }
 
 variable "credentials_file" {
     default = "sui_gcp_terraform_1.json"
