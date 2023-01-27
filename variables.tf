@@ -24,3 +24,11 @@ variable "sui_instance_pubkey" {
     EOF
 }
 
+variable "sui_disk_size" { 
+    default = 500    // 500G disk size
+}
+
+variable "sui_machine_type" { 
+    default = "f1-micro"
+}
+
