@@ -27,8 +27,8 @@ resource "google_compute_instance" "sui_instance" {
 
   metadata     = {
     ssh-keys = "root:${var.sui_instance_pubkey}"
-    startup-script = <<SCRIPT
-    "${templatefile("./templates/docker-script-build.tftpl")}"
+    startup-script = <<-SCRIPT
+    ${file("./templates/docker-script-build.tftpl")}
     SCRIPT
   }
 
