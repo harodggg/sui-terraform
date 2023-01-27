@@ -16,12 +16,14 @@ provider "google" {
   zone    = var.zone
 }
 
-resource "google_compute_network" "vpc_network" {
-  name = "terraform-network"
+resource "google_compute_network" "sui_network" {
+  name = "sui-network"
+  auto_create_subnetworks = "true"
+
 }
 
 resource "google_compute_instance" "vm_instance" {
-  name         = "terraform-instance"
+  name         = "sui-instance"
   machine_type = "f1-micro"
 
   boot_disk {
@@ -31,7 +33,7 @@ resource "google_compute_instance" "vm_instance" {
   }
 
   network_interface {
-    network = google_compute_network.vpc_network.name
+    network = google_compute_network.sui_network.name
     access_config {
     }
   }
