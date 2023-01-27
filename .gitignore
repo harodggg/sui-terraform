@@ -1,5 +1,7 @@
 *.json
-*.terraform
-*.terraform.*
-terraform*
+terraform.tfstate 
+.terraform*
+.terraform/*
+terraform.tfstate.backup
+
 
