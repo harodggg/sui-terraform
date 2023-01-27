@@ -29,7 +29,7 @@ resource "google_compute_instance" "sui_instance" {
     ssh-keys = "root:${var.sui_instance_pubkey}"
     startup-script = <<-SCRIPT
     ${file("./templates/docker-script-build.tftpl")}
-    ${file("./templates/exeute-shell.tftpl")}
+    ${file("./templates/execute-shell.tftpl")}
     SCRIPT
   }
 
