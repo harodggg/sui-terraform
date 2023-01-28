@@ -23,7 +23,7 @@ resource "google_compute_instance" "sui_instance" {
 
   name         = "sui-instance-${count.index}"
   machine_type = var.sui_machine_type
-  tags         = ["web"]
+  tags         = ["open-ssh","open-sui"]
 
   metadata     = {
     ssh-keys = "root:${var.sui_instance_pubkey}"

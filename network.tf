@@ -5,16 +5,32 @@ resource "google_compute_network" "sui_network" {
 
 }
 
+resource "google_compute_firewall" "ssh_firewall" { 
+  name                  = "ssh-firewall"
+  network               = google_compute_network.sui_network.name
+
+  allow {
+    protocol = "tcp"
+    ports    = ["22"]
+  }
+
+  target_tags = ["open-ssh"]
+  source_ranges = ["0.0.0.0/0"]
+
+
+}
+
+
 resource "google_compute_firewall" "sui_firewall" { 
   name                  = "sui-firewall"
   network               = google_compute_network.sui_network.name
 
   allow {
     protocol = "tcp"
-    ports    = ["22", "8080", "1000-2000"]
+    ports    = []
   }
 
-  target_tags = ["web"]
+  target_tags = ["open-sui"]
   source_ranges = ["0.0.0.0/0"]
 
 
