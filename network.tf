@@ -27,7 +27,7 @@ resource "google_compute_firewall" "sui_firewall" {
 
   allow {
     protocol = "tcp"
-    ports    = []
+    ports    = [9000]
   }
 
   target_tags = ["open-sui"]

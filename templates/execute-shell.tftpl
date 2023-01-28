@@ -3,3 +3,7 @@ sudo apt update && sudo apt upgrade
 chmod 755 /root/docker-install.sh
 /root/docker-install.sh >> /root/docker-install.log
 
+
+sudo apt install wget curl
+wget https://github.com/MystenLabs/sui/raw/main/crates/sui-config/data/fullnode-template.yaml -O /root/fullnode.yaml
+curl -fLJO https://github.com/MystenLabs/sui-genesis/raw/main/testnet/genesis.blob >> /root/genesis.blob
