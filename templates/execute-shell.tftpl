@@ -6,7 +6,7 @@ chmod 755 /root/docker-install.sh
 # Download the sui node configuration file
 sudo apt install wget curl
 wget https://github.com/MystenLabs/sui/raw/main/crates/sui-config/data/fullnode-template.yaml -O /root/fullnode-template.yaml
-curl -fLJO https://github.com/MystenLabs/sui-genesis/raw/main/testnet/genesis.blob >> /root/genesis.blob
+curl -fLJ https://github.com/MystenLabs/sui-genesis/raw/main/testnet/genesis.blob -o /root/genesis.blob
 wget https://raw.githubusercontent.com/MystenLabs/sui/main/docker/fullnode/docker-compose.yaml -O /root/docker-compose.yaml
 
 # Starting up the sui node
