@@ -6,6 +6,23 @@ variable "credentials_file" {
     default = "sui_gcp_terraform_1.json"
  }
 
+ variable "gcp_providers_config" {
+        type = list(
+                object({
+                gcp_name = string,
+                node_num = number,
+                credentials_file = string
+        }))
+
+        default = [
+        {
+                gcp_name = "g1",
+                node_num = 2,
+                credentials_file = "sui_gcp_terraform_1.json"
+        }]
+        }
+
+
 variable "region" {
   default = "us-west1"
 }
