@@ -7,11 +7,6 @@ terraform {
   }
 }
 
-
-
-
- 
-
 resource "google_compute_instance" "sui_instance" {
   count        = var.sui_instance_num
 
